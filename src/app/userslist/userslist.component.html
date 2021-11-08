@@ -1,8 +1,24 @@
 <div>Users list inside the Module</div>
-<br>
-<input type="button" (change)="setNewUserName($event.target.value)">
+<br />
+<input
+  class="img-fluid"
+  type="text"
+  (change)="setNewUserName($event.target)"
+  placeholder="Enter you username"
+  [value]="newUserName"
+/>
+<input
+  class="img-fluid"
+  type="number"
+  (change)="setNewUserAge($event.target)"
+  placeholder="Enter you Age"
+  [value]="newUserAge"
+/>
 <button (click)="addUser()">Add user</button>
-<div *ngFor="let user of users">
-    {{user.fname}} id is {{user.id}} :{{user.age}} years old
-    <span (click)= "removeUser(user.id)">remove</span>
+<div *ngFor="let user of users" class="user-container">
+  <span>
+    Our user name <span class="order-1">{{ user.fname }}</span> is
+    <span class="order-1">{{ user.age }}</span> years old
+  </span>
+  <span (click)="removeUser.emit(user.id)" class="remove">remove</span>
 </div>

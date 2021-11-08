@@ -1,2 +1,5 @@
 <h1>Welcome to Angular Beginner</h1>
-<app-users-list></app-users-list>
+<app-users-list
+  [users]="users"
+  (removeUser)="removeUser($event)"
+></app-users-list>

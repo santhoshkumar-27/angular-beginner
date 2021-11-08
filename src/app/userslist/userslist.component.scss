@@ -1,0 +1,43 @@
+// *{
+//     border: 1px solid blue;
+//   display: block;
+//   padding: 1rem;
+// }
+
+.user-container {
+  //   border: 1px solid red;
+  border-bottom: 1px solid red;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.3rem;
+  border-radius: 30px;
+  text-transform: capitalize;
+}
+button {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.order-1 {
+  color: blue;
+}
+:host {
+  border: 1px solid blue;
+  display: block;
+  padding: 1rem;
+}
+
+.img-fluid {
+  width: 100%;
+}
+input[type="text"],
+[type="number"]{
+    margin-bottom: 10px;
+    height: 3vh;
+}
+
+.remove{
+    color: red;
+    cursor: pointer;
+}

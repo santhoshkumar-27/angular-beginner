@@ -1,39 +1,42 @@
-import { Component } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+// import { EventEmitter } from "stream";
 
 @Component({
     selector: 'app-users-list',
-    templateUrl: './userslist.component.html'
+    templateUrl: './userslist.component.html',
+    styleUrls: ['./userslist.component.scss'],
 })
 
 export class UsersListComponent{
     // testUser = ['John', 'Aravind', 'Yuvaraj']
-    users = [
-        {
-            id: '1',
-            fname: 'John',
-            age: 22
-        },
-        {
-            id: '2',
-            fname: 'Aravind',
-            age: 23
-        },
-        {
-            id: '3',
-            fname: 'Yuvaraj',
-            age: 24
-        }
-    ]
-
-    removeUser(id: string): void{
-        this.users = this.users.filter(users => users.id !== id)
-        console.log('removeuser', id)
-    }
+    newUserName:string = "";
+    newUserAge:string = "";
+    @Input()users: { id: string; fname: string; age: string; }[] 
+    @Output()removeUser = new EventEmitter();
+    
     setNewUserName(val:any):void{
-        console.log(`setNewuser ${val}`)
+        this.newUserName = val.value;
+        // console.log(`setNewuser ${val.value}`)
+    }
+    setNewUserAge(val:any):void{
+        this.newUserAge = val.value;
+        // console.log(`setNewuser ${val.value}`)
     }
     addUser():void{
-        console.log("add user")
+        const uniqueId:string = Math.random().toString(15)
+        const newUsers = {
+            id: uniqueId,
+            fname: this.newUserName,
+            age:this.newUserAge
+
+        }
+        // console.log("add user", newUsers);
+        if(this.newUserName !== "" && this.newUserAge !== ""){
+            this.users.push(newUsers)
+        }
+        this.newUserName = "";
+        this.newUserAge = "";
     }
+    
     
 }
