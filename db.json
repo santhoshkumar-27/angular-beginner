@@ -1,0 +1,19 @@
+{
+    "users":[
+    {
+        "id":"1",
+        "fname":"santhosh",
+        "age": "23"
+    },
+    {
+        "id":"2",
+        "fname":"kumar",
+        "age": "40"
+    },
+    {
+        "id":"3",
+        "fname":"sudersun",
+        "age": "25"
+    }
+    ]
+}

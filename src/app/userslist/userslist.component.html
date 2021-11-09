@@ -15,10 +15,16 @@
   [value]="newUserAge"
 />
 <button (click)="addUser()">Add user</button>
-<div *ngFor="let user of users" class="user-container">
-  <span>
-    Our user name <span class="order-1">{{ user.fname }}</span> is
-    <span class="order-1">{{ user.age }}</span> years old
-  </span>
-  <span (click)="removeUser.emit(user.id)" class="remove">remove</span>
+<div *ngFor="let user of users">
+  <div *ngIf="user.id != ''" class="user-container">
+    <div>
+      Our user name <span class="order-1">{{ user.fname }}</span> is<span
+        class="order-1"
+        >{{ user.age }}</span
+      >
+      years old
+    </div>
+    <span (click)="removeUser.emit(user.id)" class="remove">remove</span>
+  </div>
 </div>
+ 
