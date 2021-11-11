@@ -1,3 +1,9 @@
 {
-  "users": []
+  "users": [
+    {
+      "fname": "santhohskumar",
+      "age": "23",
+      "id": 1
+    }
+  ]
 }
